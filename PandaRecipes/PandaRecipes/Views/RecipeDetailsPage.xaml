@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PandaRecipes.Views.RecipeDetailsPage">
+    <ContentPage.Content>
+        <ScrollView BackgroundColor="AliceBlue">
+            <StackLayout Margin="15">
+                <Label Text="{Binding PhotoPath}"
+                   WidthRequest="0" 
+                   HeightRequest="0"
+                   Opacity="0.0"  />
+                <Image Source="{Binding Img}" />
+                <Entry Text="{Binding Title}"
+                   HorizontalTextAlignment="Center"
+                   BackgroundColor="LightYellow"
+                   Placeholder="Tytuł"
+                   HorizontalOptions="FillAndExpand" />
+                <Label Text="Szczegóły przepisu" FontAttributes="Bold" HorizontalOptions="Center" ></Label>
+                <Editor Text="{Binding Description}"
+                    HeightRequest="100"    
+                    BackgroundColor="LightYellow"
+                    HorizontalOptions="FillAndExpand" />
+                <Entry Text="{Binding Category}"
+                    HorizontalTextAlignment="Center"
+                    BackgroundColor="LightYellow"
+                    Placeholder="Kategorie odzielone spacją"
+                    HorizontalOptions="FillAndExpand" />
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <StackLayout Orientation="Vertical" WidthRequest="170">
+                        <Button Text="Zrób zdjęcie" HorizontalOptions="FillAndExpand"  Command="{Binding TakePhotoCommand}"   FontAttributes="Bold" BackgroundColor="LightBlue" BorderRadius="10"/>
+                        <Button Text="Dodaj" HorizontalOptions="FillAndExpand" Command="{Binding SaveRecipeCommand}" CommandParameter="ADD"  FontAttributes="Bold" BackgroundColor="LightGreen" BorderRadius="10"/>
+                        <Button Text="Udostępnij" HorizontalOptions="FillAndExpand" Command="{Binding ShareRecipeCommand}"   FontAttributes="Bold" BackgroundColor="LightPink" BorderRadius="10"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" WidthRequest="170">
+                        <Button Text="Wybierz zdjęcie" HorizontalOptions="FillAndExpand" Command="{Binding PickPhotoCommand}" FontAttributes="Bold" BackgroundColor="LightCoral" BorderRadius="10" />
+                        <Button Text="Zaktualizuj" HorizontalOptions="FillAndExpand"  Command="{Binding SaveRecipeCommand}" CommandParameter="UPDATE"   FontAttributes="Bold" BackgroundColor="LightGray" BorderRadius="10"/>
+                        <Button Text="Usuń" HorizontalOptions="FillAndExpand"  Command="{Binding DeleteRecipeCommand}"   FontAttributes="Bold" BackgroundColor="Red" BorderRadius="10"/>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

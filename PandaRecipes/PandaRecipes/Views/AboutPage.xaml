@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PandaRecipes.Views.AboutPage" BackgroundColor="AliceBlue">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="30">
+                              
+            <Label Text="Wykonawcy:" FontAttributes="Bold" FontSize="Large"
+                HorizontalOptions="CenterAndExpand" />
+            <Label x:Name="name" Text="" FontAttributes="Bold" FontSize="Large" TextColor="OrangeRed"
+                HorizontalOptions="CenterAndExpand" />         
+            <StackLayout>
+                <Image x:Name="image" Source="logo.png" Opacity="0.0"></Image>
+            </StackLayout>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

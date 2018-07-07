@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PandaRecipes"
+             x:Class="PandaRecipes.MainPage">
+
+    <StackLayout Spacing="30" VerticalOptions="Center" HorizontalOptions="Center" >
+
+        <Image x:Name="logo" HeightRequest="200" WidthRequest="200" Source="{Binding Img}" ></Image>
+
+        <Label Text="{Binding Title}" HorizontalTextAlignment="Center" FontSize="Large" FontAttributes="Bold"/>
+        <StackLayout Spacing="20">
+            <Button Command="{Binding GoToPageCommand}" CommandParameter="RecipesPage" Text="Zobacz przepisy" FontAttributes="Bold" BorderRadius="10" BackgroundColor="LightGreen"></Button>
+            <Button Command="{Binding GoToPageCommand}" CommandParameter="RecipeDetailsPage"   Text="Wprowadź przepis" FontAttributes="Bold" BorderRadius="10" BackgroundColor="Tomato"></Button>
+            <Button Command="{Binding GoToPageCommand}" CommandParameter="AboutPage" Text="O aplikacji" FontAttributes="Bold" BorderRadius="10" BackgroundColor="LightGray"></Button>
+
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
