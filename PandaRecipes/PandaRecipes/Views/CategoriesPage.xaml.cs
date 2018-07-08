@@ -12,21 +12,20 @@ using Xamarin.Forms.Xaml;
 namespace PandaRecipes.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class RecipesPage : ContentPage
+	public partial class CategoriesPage : ContentPage
 	{
-        string _category;
-		public RecipesPage(string category = null)
+		public CategoriesPage()
 		{
-            _category = category == null ? "" : category;
-            InitializeComponent();            
+			InitializeComponent();
+            BindingContext = new CategoriesViewModel();
         }
 
         protected override void OnAppearing()
         {
-            BindingContext = new RecipesViewModel(_category);
             base.OnAppearing();
-            lvItems.ItemTapped -= RecipesViewModel.LvItems_ItemTapped;
-            lvItems.ItemTapped += RecipesViewModel.LvItems_ItemTapped;
+            BindingContext = new CategoriesViewModel();
+            lvItems.ItemTapped -= CategoriesViewModel.LvItems_ItemTapped;
+            lvItems.ItemTapped += CategoriesViewModel.LvItems_ItemTapped;
         }
     }
 }

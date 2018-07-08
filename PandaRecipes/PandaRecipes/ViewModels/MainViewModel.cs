@@ -60,6 +60,9 @@ namespace PandaRecipes.ViewModels
                 case nameof(Views.RecipeDetailsPage):
                     page = new Views.RecipeDetailsPage(null);
                     break;
+                case nameof(Views.CategoriesPage):
+                    page = new Views.CategoriesPage();
+                    break;                
                 case nameof(Views.AboutPage):
                     page = new Views.AboutPage();
                     break;

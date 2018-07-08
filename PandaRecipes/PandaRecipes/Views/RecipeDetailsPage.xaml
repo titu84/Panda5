@@ -11,20 +11,24 @@
                    Opacity="0.0"  />
                 <Image Source="{Binding Img}" />
                 <Entry Text="{Binding Title}"
-                   HorizontalTextAlignment="Center"
+                   HorizontalTextAlignment="Start"
                    BackgroundColor="LightYellow"
                    Placeholder="Tytuł"
-                   HorizontalOptions="FillAndExpand" />
+                   HorizontalOptions="FillAndExpand"
+                   Margin="10"/>
                 <Label Text="Szczegóły przepisu" FontAttributes="Bold" HorizontalOptions="Center" ></Label>
-                <Editor Text="{Binding Description}"
-                    HeightRequest="100"    
+                <Editor Text="{Binding Description}"                       
                     BackgroundColor="LightYellow"
-                    HorizontalOptions="FillAndExpand" />
+                    HorizontalOptions="FillAndExpand"
+                    MinimumHeightRequest="100"
+                    HeightRequest="130"
+                    Margin="10"/>
                 <Entry Text="{Binding Category}"
-                    HorizontalTextAlignment="Center"
+                    HorizontalTextAlignment="Start"
                     BackgroundColor="LightYellow"
                     Placeholder="Kategorie odzielone spacją"
-                    HorizontalOptions="FillAndExpand" />
+                    HorizontalOptions="FillAndExpand"
+                    Margin="10"/>
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                     <StackLayout Orientation="Vertical" WidthRequest="170">
                         <Button Text="Zrób zdjęcie" HorizontalOptions="FillAndExpand"  Command="{Binding TakePhotoCommand}"   FontAttributes="Bold" BackgroundColor="LightBlue" BorderRadius="10"/>
